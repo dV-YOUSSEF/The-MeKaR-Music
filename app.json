@@ -14,7 +14,7 @@
     "env": {
       "BOT_TOKEN": {
         "description": "⦗ @Botfather ⦘ ↫ تـــوكـــن الـبـوت",
-        "value": "6992462567:AAFPt3I41d1vkSvzco9r0qrEHKoSOkn68ng",
+        "value": "6992462567:AAFnQCbbuCaTZh6CQYqfgBMlCxtAGSraHEM",
         "required": true
       },
       "MONGO_DB_URI": {
