@@ -1,6 +1,6 @@
 from pyrogram import filters, Client
 from pyrogram import Client as app
-from config import API_ID, API_HASH, MONGO_DB_URL, appp, user as usr, helper as ass, call, OWNER, OWNER_NAME, CHANNEL, GROUP
+from source.config import API_ID, API_HASH, MONGO_DB_URL, app, user as usr, helper as ass, call, OWNER, OWNER_NAME, CHANNEL, GROUP
 from source.info import Call, activecall, helper, active
 from source.Data import db, dev, devname, set_must, get_data
 from pyrogram.raw.types import InputPeerChannel
