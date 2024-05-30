@@ -26,7 +26,7 @@ from telethon.errors import (
 
 
 
-ask_ques = "**♪ قم بالضغط علي زر بيروجرام  🪄✔️**"
+ask_ques = "**قم بالضغط علي زر بيروجرام .**"
 buttons_ques = [
     [
         InlineKeyboardButton("بيروجرام", callback_data="pyrogram"),
@@ -35,14 +35,14 @@ buttons_ques = [
 
 gen_button = [
     [
-        InlineKeyboardButton(text="♪ استخراج جلسه  🪄✔️", callback_data="generate")
+        InlineKeyboardButton(text="استخراج جلسه .", callback_data="generate")
     ]
 ]
 
 
 
 
-@Client.on_message(filters.private & ~filters.forwarded & filters.command(["☆ استخراج جلسه ☆", ": استخراج جلسه :"], ""))
+@Client.on_message(filters.private & ~filters.forwarded & filters.command(["استخراج جلسه", ": استخراج جلسه :"], ""))
 async def main(_, msg):
     await msg.reply(ask_ques, reply_markup=InlineKeyboardMarkup(buttons_ques))
 
@@ -54,9 +54,9 @@ async def generate_session(bot: Client, msg: Message, telethon=False, is_bot: bo
         ty = "ᴩʏʀᴏɢʀᴀᴍ"
     if is_bot:
         ty += " ʙᴏᴛ"
-    await msg.reply(f"**♪ انت الان سوف تستخرج جلسه بيروجرام اصدار 2.0.59  🪄✔️**")
+    await msg.reply(f"**انت الان سوف تستخرج جلسه بيروجرام اصدار 2.0.59 .**")
     user_id = msg.chat.id
-    api_id_msg = await bot.ask(user_id, "**♪ ارسل الان : api_id الخاص بالحساب  🪄✔️**", filters=filters.text)
+    api_id_msg = await bot.ask(user_id, "**ارسل الان : api_id الخاص بالحساب .**", filters=filters.text)
     if await cancelled(api_id_msg):
         return
     if api_id_msg.text == "تخطي":
@@ -68,12 +68,12 @@ async def generate_session(bot: Client, msg: Message, telethon=False, is_bot: bo
         except ValueError:
             await api_id_msg.reply("**ᴀᴩɪ_ɪᴅ** ᴍᴜsᴛ ʙᴇ ᴀɴ ɪɴᴛᴇɢᴇʀ, sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ ʏᴏᴜʀ sᴇssɪᴏɴ ᴀɢᴀɪɴ.", quote=True, reply_markup=InlineKeyboardMarkup(gen_button))
             return
-        api_hash_msg = await bot.ask(user_id,"**ارسل الان : api_hash الخاص بالحساب  🪄✔️**", filters=filters.text)
+        api_hash_msg = await bot.ask(user_id,"**ارسل الان : api_hash الخاص بالحساب .**", filters=filters.text)
         if await cancelled(api_hash_msg):
             return
         api_hash = api_hash_msg.text
     if not is_bot:
-        t = "**♪ حسنا ارسل الان رقم حسابك  🪄✔️\n♪ مثل : +010000000000  🪄✔️**"
+        t = "**حسنا ارسل الان رقم حسابك .\nمثل : +011586316 .**"
     else:
         t = "ᴩʟᴇᴀsᴇ sᴇɴᴅ ʏᴏᴜʀ **ʙᴏᴛ_ᴛᴏᴋᴇɴ** ᴛᴏ ᴄᴏɴᴛɪɴᴜᴇ.\nᴇxᴀᴍᴩʟᴇ : `5432198765:abcdanonymousterabaaplol`'"
     phone_number_msg = await bot.ask(user_id, t, filters=filters.text)
@@ -81,7 +81,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, is_bot: bo
         return
     phone_number = phone_number_msg.text
     if not is_bot:
-        await msg.reply("**♪ جاري ارسال الكود الي حسابك ..🪄**")
+        await msg.reply("**جاري ارسال الكود الي حسابك ..🚦**")
     else:
         await msg.reply("» ᴛʀʏɪɴɢ ᴛᴏ ʟᴏɢɪɴ ᴠɪᴀ ʙᴏᴛ ᴛᴏᴋᴇɴ...")
     if telethon and is_bot:
@@ -109,11 +109,11 @@ async def generate_session(bot: Client, msg: Message, telethon=False, is_bot: bo
     try:
         phone_code_msg = None
         if not is_bot:
-            phone_code_msg = await bot.ask(user_id, "♪ لقد ارسلنا اليك كود عبر التلجرام  🪄✔️\n♪ قم بكتابه الكود هكذا 1 2 5 8 6  🪄✔️**", filters=filters.text, timeout=600)
+            phone_code_msg = await bot.ask(user_id, "لقد ارسلنا اليك كود عبر التلجرام .\nقم بكتابه الكود هكذا 1 2 5 8 6 .**", filters=filters.text, timeout=600)
             if await cancelled(phone_code_msg):
                 return
     except TimeoutError:
-        await msg.reply("**♪ لقد تاخرت في ارسال الكود  🪄✔️\n♪ قم باستخراج جلسه مره اخري  🪄✔️**", reply_markup=InlineKeyboardMarkup(gen_button))
+        await msg.reply("**لقد تاخرت في ارسال الكود .\nقم باستخراج جلسه مره اخري .**", reply_markup=InlineKeyboardMarkup(gen_button))
         return
     if not is_bot:
         phone_code = phone_code_msg.text.replace(" ", "")
@@ -123,14 +123,14 @@ async def generate_session(bot: Client, msg: Message, telethon=False, is_bot: bo
             else:
                 await client.sign_in(phone_number, code.phone_code_hash, phone_code)
         except (PhoneCodeInvalid, PhoneCodeInvalidError):
-            await msg.reply("**♪ لقد حدث خطاء بالكود  🪄✔️\n♪ قم باستخراج جلسه مره اخري  🪄✔️**", reply_markup=InlineKeyboardMarkup(gen_button))
+            await msg.reply("**لقد حدث خطاء بالكود .\nقم باستخراج جلسه مره اخري .**", reply_markup=InlineKeyboardMarkup(gen_button))
             return
         except (PhoneCodeExpired, PhoneCodeExpiredError):
             await msg.reply("» الكود الذي ارستله منتهي.**\n\nقم باستخراج جلسه مره اخري.", reply_markup=InlineKeyboardMarkup(gen_button))
             return
         except (SessionPasswordNeeded, SessionPasswordNeededError):
             try:
-                two_step_msg = await bot.ask(user_id, "♪ الحساب في وضع التحقق  🪄✔️\n♪ ارسل باسورد الحساب للستخراج  🪄✔️**", filters=filters.text, timeout=300)
+                two_step_msg = await bot.ask(user_id, "الحساب في وضع التحقق .\nارسل باسورد الحساب للستخراج .**", filters=filters.text, timeout=300)
             except TimeoutError:
                 await msg.reply("» لقد تاخرت في كتابته.\n\nقم باستخراج جلسه مره اخري.", reply_markup=InlineKeyboardMarkup(gen_button))
                 return
@@ -154,7 +154,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, is_bot: bo
         string_session = client.session.save()
     else:
         string_session = await client.export_session_string()
-    text = f"**♪ تم استخراج الجلسه بنجاح  🪄✔️** \n\n`{string_session}`\n\n**♪ اضغط لنسخ الجلسه  🪄✔️**"
+    text = f"**تم استخراج الجلسه بنجاح .** \n\n`{string_session}`\n\n**اضغط لنسخ الجلسه .**"
     try:
         if not is_bot:
             await client.send_message("me", text)
@@ -163,7 +163,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, is_bot: bo
     except KeyError:
         pass
     await client.disconnect()
-    await bot.send_message(msg.chat.id,f"**♪ تم استخراج الجلسه بنجاح  🪄✔️** \n\n`{string_session}`\n\n**♪ اضغط لنسخ الجلسه  🪄✔️**")
+    await bot.send_message(msg.chat.id,f"**تم استخراج الجلسه بنجاح .** \n\n`{string_session}`\n\n**اضغط لنسخ الجلسه .**")
 
 
 async def cancelled(msg):
