@@ -5,7 +5,7 @@ from typing import Union
 from pyrogram import Client, filters
 from pyrogram import Client as client
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
-from config import appp, OWNER, OWNER_NAME, VIDEO
+from config import appp, OWNER, OWNER_NAME
 from source.Data import get_data
 from googletrans import Translator
 from source.Data import (get_call, get_app, get_userbot, get_group, get_channel, must_join)
