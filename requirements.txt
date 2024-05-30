@@ -3,7 +3,7 @@ tgcrypto
 ffmpeg-python
 py-tgcalls
 telethon==1.28.2
-pyrogram==2.0.59
+pyrogram==23.1.2
 youtube-search
 youtube-search-python
 yt-dlp
@@ -43,7 +43,6 @@ py-tgcalls==0.9.7
 asSQL
 pykeyboard
 gTTS
-pyrogram==2.0.106
 python-dotenv
 pyyaml
 requests
