@@ -14,7 +14,7 @@ async def main():
   except :
     pass
   starkbot = await bot.get_me()
-  perf = "[ شادو ]"
+  perf = "[ عمر ]"
   bot_name = starkbot.first_name
   botname = f"@{starkbot.username}"
   if bot_name.endswith("Assistant"):
