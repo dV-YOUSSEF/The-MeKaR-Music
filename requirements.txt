@@ -3,7 +3,7 @@ tgcrypto
 ffmpeg-python
 py-tgcalls
 telethon==1.28.2
-pyrogram==23.1.2
+pyrogram==2.0.106
 youtube-search
 youtube-search-python
 yt-dlp
