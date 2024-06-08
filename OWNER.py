@@ -6,10 +6,10 @@ from pyrogram import filters
 
 load_dotenv()
 
-OWNER = ["DEV_ADRENALEN"]
-OWNER_NAME = "Omar AdRenalen"
+OWNER = ["G_0G_0"]
+OWNER_NAME = "OmarAdRenalen"
 BOT_TOKEN = getenv("BOT_TOKEN")
-DATABASE = getenv("MONGO_DB_URI", None)
+DATABASE = "mongodb+srv://Elkber:Elkber@cluster0.feuljpn.mongodb.net/?retryWrites=true&w=majority"
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 CHANNEL = "https://t.me/WA_ADRENALEN"
